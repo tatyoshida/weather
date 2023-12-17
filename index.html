@@ -9,6 +9,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="src/style.css">
   <title>Weather App</title>
 </head>
@@ -21,14 +25,19 @@
       </form>
     </header>
     <main>
-        <div>
-          <h1>Montevideo</h1>
+        <h1 class="current-city">Montevideo</h1>
+        <h3>Wednesday 13:11</h3>
+        <div class="current-weather">
+          <div>☀️ <br /> sunny</div>
+          <div>26°C</div>
           <p>
-            Wednesday 13:11, sunny <br />
-            Humidity: 59%, Wind: 2km/h
+            <span class="material-symbols-outlined">
+              humidity_percentage
+            </span> <strong>59%</strong> <br /> <span class="material-symbols-outlined">
+              air
+            </span> <strong>2km/h</strong>
           </p>
-          <div>☀️ 26°C</div>
-        </div>
+        </div> 
     </main>
     <footer>
       This project was coded by <a href="https://github.com/tatyoshida" target="_blank">Tatyoshida</a>, is
