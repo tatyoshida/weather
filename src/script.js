@@ -1,7 +1,10 @@
 function displayWeather(response) {
-  let currentTemperature = Math.round(response.data.temperature.current);
+  let currentTemperature = response.data.temperature.current;
   let currentTemperatureElement = document.querySelector("#current-temperature");
-  currentTemperatureElement.innerHTML = `${currentTemperature}`;
+  let cityElement = document.querySelector("#current-city");
+
+  cityElement.innerHTML = response.data.city;
+  currentTemperatureElement.innerHTML = Math.round(currentTemperature);
   
   let currentDescription = response.data.condition.description;
   let currentDescriptionElement = document.querySelector("#description");
@@ -15,15 +18,15 @@ function displayWeather(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
   windSpeedElement.innerHTML = `${windSpeed}`;
 }
-function searchCity(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
-  cityElement.innerHTML = searchInputElement.value;
+function searchCity(city) {
   let apiKey = "ofa9b4df40ba3b4e1688atf2bb780ddd";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInputElement.value}&key=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayWeather);
+}
+function searchSubmit(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  searchCity(searchInput.value);
 }
 
 function formatDate(date) {
@@ -53,7 +56,7 @@ function formatDate(date) {
 }
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("submit", searchSubmit);
 
 let currentDateElement = document.querySelector("#current-date");
 let currentDate = new Date();
