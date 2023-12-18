@@ -11,8 +11,6 @@
     rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="src/style.css">
   <title>Weather App</title>
 </head>
@@ -26,19 +24,23 @@
     </header>
     <main>
         <h1 class="current-city">Montevideo</h1>
-        <h3>Wednesday 13:11</h3>
+        <h3>
+          Wednesday 
+          <strong>13:11</strong>
+        </h3>
         <div class="current-weather">
-          <div>
+          <div class="description">
             <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png">
             <p>Sunny</p>
           </div>
-          <div>
-            <p class="current-temperature-value">26°C</p>
+          <div class="current-temperature-value">
+            <p>26°C</p>
           </div>
-          <div>
-            <span class="material-symbols-outlined">humidity_percentage</span> <strong>59%</strong>
+          <div class="weather-app-details">
+            <span class="material-symbols-outlined">humidity_low</span> 59%
             <br />
-            <span class="material-symbols-outlined">air</span> <strong>2km/h</strong>
+            <br />
+            <span class="material-symbols-outlined">air</span> 2km/h
           </div>
         </div> 
     </main>
