@@ -78,13 +78,17 @@ p {
   margin: 0 auto;
 }
 
-.current-temperature-value {
+.current-temperature {
   background: #252628;
+  padding: 60px 0;
+}
+.current-temperature-value {
   font-size: 48px;
   font-weight: 500;
-  padding: 20px 0;
 }
-
+.weatehr-app-unit {
+  font-size: 28px;
+}
 .weather-app-details {
   background: #252628;
   padding: 60px 0;
