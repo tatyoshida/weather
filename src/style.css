@@ -17,6 +17,9 @@ a {
   padding: 40px 30px;
 }
 
+header {
+  padding: 0 0 12px;
+}
 .search-input {
     background-color: #f9f7fe;
     border: none;
@@ -50,7 +53,7 @@ main {
 h3 {
   text-align: center;
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 15px 0 0;
   font-weight: 400;
 }
 
@@ -66,10 +69,15 @@ p {
   text-align: center;
 }
 
-.description {
+.weather-description {
   background: #252628;
   padding: 20px 0;
 }
+
+.description {
+  margin: 0 auto;
+}
+
 .current-temperature-value {
   background: #252628;
   font-size: 48px;

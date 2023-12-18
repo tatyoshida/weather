@@ -1,17 +1,19 @@
 function displayWeather(response) {
+  let timeElement = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
   let currentTemperatureElement = document.querySelector("#current-temperature");
   let currentTemperature = response.data.temperature.current;
   let cityElement = document.querySelector("#current-city");
   let currentDescriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed");
-  let timeElement = document.querySelector("#time");
-  let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
-  currentTemperatureElement.innerHTML = Math.round(currentTemperature);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" />`;
   currentDescriptionElement.innerHTML = response.data.condition.description;
+  currentTemperatureElement.innerHTML = Math.round(currentTemperature);
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}Km/h`;
   
@@ -26,7 +28,6 @@ function searchSubmit(event) {
   let searchInputElement = document.querySelector("#search-input");
   searchCity(searchInputElement.value);
 }
-
 function formatDate(date) {
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -57,7 +58,3 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
 
 searchCity("Montevideo");
-
-let currentDateElement = document.querySelector("#current-date");
-let currentDate = new Date();
-currentDateElement.innerHTML = formatDate(currentDate);
